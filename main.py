@@ -1,8 +1,12 @@
 from discord.ext.commands import Bot
 import discord
 import sys, traceback
+import configparser
 
-TOKEN = 'RGAPI-701535ae-6431-4525-bf17-70c9114d38a1'
+config = configparser.ConfigParser()
+config.read('config.ini')
+
+TOKEN = config.get('BOT', 'BotToken')
 
 bot = Bot(command_prefix='/')
 

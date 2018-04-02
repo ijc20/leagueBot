@@ -3,8 +3,12 @@ from discord.ext import commands
 from __main__ import bot
 from riotwatcher import RiotWatcher
 import json
+import configparser
 
-APIKey = 'RGAPI-701535ae-6431-4525-bf17-70c9114d38a1'
+config = configparser.ConfigParser()
+config.read('config.ini')
+
+APIKey = config.get('RIOT_API', 'ApiKeyTest')
 watcher = RiotWatcher(APIKey)
 
 with open('champion_data.txt') as json_file:
