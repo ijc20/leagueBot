@@ -8,8 +8,7 @@ import configparser
 config = configparser.ConfigParser()
 config.read('config.ini')
 
-#APIKey = config.get('RIOT_API', 'ApiKey')
-APIKey = 'RGAPI-701535ae-6431-4525-bf17-70c9114d38a1'
+APIKey = config.get('RIOT_API', 'ApiKey')
 watcher = RiotWatcher(APIKey)
 
 with open('champion_data.txt') as json_file:
